@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Settings from './Settings'
 import Profile from './Profile'
 import Home from './Home'
+import Library from './Library'
 
 function App() {
   
@@ -13,6 +14,7 @@ function App() {
       <Navbar />
     <Routes>
       <Route path='/' element={<Home />}></Route>
+      <Route path='/library' element={<Library />}></Route>
       <Route path='/settings' element={<Settings />}></Route>
       <Route path='/profile' element={<Profile />}></Route>
     </Routes>

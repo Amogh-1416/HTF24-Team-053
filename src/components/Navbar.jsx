@@ -15,6 +15,7 @@ const Navbar = () => {
                     <a href="#" className="text-white font-bold text-xl">Synthesia</a>
                     <div className="hidden md:block">
                         <ul className="flex space-x-4">
+                            <li><Link to="/library" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Library</Link></li>
                             <li><Link to="/settings" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Settings</Link></li>
                             <li><Link to="/profile" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Profile</Link></li>
                             
