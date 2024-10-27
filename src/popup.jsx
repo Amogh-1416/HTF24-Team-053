@@ -76,7 +76,7 @@ const buttonRowStyle = {
 };
 
 const buttonStyle = {
-  padding: "15px 30px",  // Increased padding for larger buttons
+  padding: "15px 30px",  
   backgroundColor: "#f0f0f0",
   border: "1px solid #ddd",
   borderRadius: "5px",
@@ -84,11 +84,11 @@ const buttonStyle = {
   cursor: "pointer",
   flex: 1,
   textAlign: "center",
-  fontSize: "1rem",  // Increased font size
+  fontSize: "1rem",  
 };
 
 const progressBarContainerStyle = {
-  height: "8px",  // Increased height for a thicker progress bar
+  height: "8px",  
   backgroundColor: "#3a3a4a",
   borderRadius: "5px",
   overflow: "hidden",
@@ -105,7 +105,7 @@ const closeButtonStyle = {
   position: 'absolute',
   top: '10px',
   right: '10px',
-  color: '#888', // Light gray or your preferred color
+  color: '#888', 
   cursor: 'pointer',
 
 };

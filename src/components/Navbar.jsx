@@ -12,7 +12,7 @@ const Navbar = () => {
         <nav className="sticky top-0 w-full bg-gray-900 backdrop-blur-md rounded-md " >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
-                    <a href="#" className="text-white font-bold text-xl">Synthesia</a>
+                    <a href="/" className="text-white font-bold text-xl">Synthesia</a>
                     <div className="hidden md:block">
                         <ul className="flex space-x-4">
                             <li><Link to="/library" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Library</Link></li>
