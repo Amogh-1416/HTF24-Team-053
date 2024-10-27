@@ -1,10 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Link } from 'react-router-dom';
+import cross from './cross.png'
 
-const Synthesia = () => {
+const Synthesia = ({ close }) => {
   return (
-    <div style={containerStyle}>
+
       <div style={componentStyle}>
+        <div style={closeButtonStyle} onClick={close}>  {/* Close button */}
+        <img src={cross} alt="Close" className="size-8"/>
+        </div>
         <h2 style={{ textAlign: "center", fontSize: "2rem", color:"#FFFFFF" }}>Synthesia</h2>
         <p style={{ textAlign: "center", color: "#FFFFFF", fontSize: "1rem" }}>
           (Examples: marketing plans, course reading, research notes, meeting transcripts, sales documents, etc.)
@@ -30,8 +35,11 @@ const Synthesia = () => {
           <div style={progressBarStyle}></div>
         </div>
         <div style={{ textAlign: "right", fontSize: "1rem", color: "#999" }}>Source limit</div>
+        <div className="flex flex-left mt-10">
+          <Link to="/notebook" className="text-gray-300 bg-gray-700 hover:bg-white hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium flex flex-end">Continue</Link>
+        </div>
       </div>
-    </div>
+
   );
 };
 
@@ -39,17 +47,17 @@ const containerStyle = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  height: "100vh",
   backgroundColor: "#1e1e2f"
 };
 
 const componentStyle = {
-  width: "90%",  // Increased to 90% of the screen width
-  maxWidth: "1200px",  // Maximum width increased to accommodate larger screens
+  width: "90%",  
+  maxWidth: "1200px",  
   padding: "40px",
   border: "1px solid #444",
   borderRadius: "10px",
   backgroundColor: "#2e2e3e",
+  position: "relative",
 };
 
 const uploadBoxStyle = {
@@ -92,5 +100,16 @@ const progressBarStyle = {
   height: "100%",
   backgroundColor: "#1a73e8",
 };
+
+const closeButtonStyle = {
+  position: 'absolute',
+  top: '10px',
+  right: '10px',
+  color: '#888', // Light gray or your preferred color
+  cursor: 'pointer',
+
+};
+
+
 
 export default Synthesia;

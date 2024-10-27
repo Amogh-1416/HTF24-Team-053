@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import plus from './plus.png'
+import Popup from 'reactjs-popup';
+import Synthesia from "./popup";
 
 export default function Library() {
 
@@ -7,6 +9,19 @@ export default function Library() {
         { title: "The Great Gatsby", author: "F. Scott Fitzgerald", cover: "gatsby.jpg", description: "A classic novel...", date: "26 Oct 2024" },
         { title: "To Kill a Mockingbird", author: "Harper Lee", cover: "mockingbird.jpg", description: "Another classic...", date: "25 Oct 2024" },
     ]);
+
+    const [isPopupOpen, setIsPopupOpen] = useState(false); // State to control popup
+    const [isClicked, setIsClicked] = useState(false);
+
+    const openPopup = () => {
+        setIsPopupOpen(true);
+        setIsClicked(true);
+    };
+
+    const closePopup = () => {
+        setIsPopupOpen(false);
+        setIsClicked(false);
+    };
     return (
         <>
             <div className="container text-white flex flex-col h-[180vh]">
@@ -18,7 +33,7 @@ export default function Library() {
                         <h2 className="books-title font-medium text-3xl mt-20 " style={{color:'#e6fffa',}}>
                             Books
                         </h2>
-                        <div className="card-container p-16 border-2 rounded-lg mt-6 flex flex-col items-center">
+                        <div className={`card-container p-16 border-2 rounded-lg mt-6 flex flex-col items-center cursor-pointer transition-transform hover:scale-105 transition-colors  hover:bg-gray-700 ${isClicked ? 'bg-gray-700' : ''}`} onClick={openPopup}>
                             <img src={plus} alt="Plus" className="size-8"/>
                             <h2 className="mt-4 text-1xl">New NoteBook</h2>
                         </div>
@@ -30,7 +45,7 @@ export default function Library() {
                 <div className="flex gap-4 mx-32 mt-6">
                     
                     {books.map((book, index) => (
-                        <div key={index} className="book-card bg-gray-800 rounded-lg shadow-md card-container p-12 border-2 rounded-lg mt-6 flex flex-col items-center">
+                        <div key={index} className="book-card bg-gray-800 rounded-lg shadow-md card-container p-12 border-2 rounded-lg mt-6 flex flex-col items-center cursor-pointer transition-transform hover:scale-105">
                             <div className="book-details mt-4">
                                 <h3 className="text-xl font-semibold">{book.title}</h3>
                                 <p className="text-gray-400 text-sm">By {book.author}</p>
@@ -41,6 +56,16 @@ export default function Library() {
                 </div>
             </div>
             <div>
+
+            <Popup open={isPopupOpen} onClose={closePopup} modal nested>
+                {
+                    close => (
+                        <div className='modal'>
+                            <Synthesia close={close}/>
+                        </div>
+                    )
+                }
+            </Popup>
                 
             </div>
         </>
